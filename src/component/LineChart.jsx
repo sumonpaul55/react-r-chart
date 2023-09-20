@@ -1,6 +1,9 @@
-import { LineChart as Lcahrt, Line ,CartesianGrid, XAxis, YAxis} from 'recharts';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { LineChart as Lcahrt, Line ,CartesianGrid, XAxis, YAxis,BarChart, Bar, Cell, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 
 function LineChart() {
+    const [phone, setPhone] = useState([])
     const studentData = [
         { name: "Alice", mathScore: 10, scienceScore: 92, socialScore: 78 },
         { name: "Bob", mathScore: 78, scienceScore: 100, socialScore: 75 },
@@ -14,7 +17,22 @@ function LineChart() {
         { name: "Jack", mathScore: 79, scienceScore: 83, socialScore: 76 }
       ];
       
-
+useEffect(()=>{
+    axios.get("https://openapi.programming-hero.com/api/phones?search=iphone")
+    .then(data =>{
+        const phones = data.data.data;
+        // console.log(phones)
+       const needPhones = phones.map((phone)=>{
+          const phoneData ={
+            name: phone.phone_name,
+            price: parseInt(phone.slug.split("-")[1])
+          } 
+          return phoneData
+        })
+        setPhone(needPhones)
+    })
+},[])
+// console.log(phone)
 
   return (
     <div>
@@ -37,6 +55,14 @@ function LineChart() {
                <XAxis/>
                <YAxis/>
             </Lcahrt>
+        </div>
+        <div className="mt-32">
+            <h1 className="mt-10">Phone Chart based price</h1>
+            <BarChart width={1000} height={400} data={phone}>
+          <Bar dataKey="price" fill="#000" />
+          <XAxis dataKey="name"/>
+          <YAxis dataKey="price"/>
+        </BarChart> 
         </div>
     </div>
   )
