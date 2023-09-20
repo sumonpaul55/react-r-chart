@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { LineChart as Lcahrt, Line ,CartesianGrid, XAxis, YAxis,BarChart, Bar, Cell, Tooltip, Legend, ResponsiveContainer} from 'recharts';
+import { LineChart as Lcahrt, Line ,CartesianGrid, XAxis, YAxis,BarChart, Bar, Tooltip, } from 'recharts';
 
 function LineChart() {
     const [phone, setPhone] = useState([])
@@ -61,7 +61,8 @@ useEffect(()=>{
             <BarChart width={1000} height={400} data={phone}>
           <Bar dataKey="price" fill="#000" />
           <XAxis dataKey="name"/>
-          <YAxis dataKey="price"/>
+          <YAxis />
+          <Tooltip/>
         </BarChart> 
         </div>
     </div>
