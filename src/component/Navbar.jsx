@@ -1,17 +1,18 @@
-import { Link } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
+import "./navbar.css"
 
 const Navbar = () => {
     return (
         <div>
             <ul className="flex gap-5">
                 <li>
-                    <Link to="/about">About</Link>
+                    <NavLink to="/about">About</NavLink>
+                </li>
+                    <NavLink to="/contact">Contact</NavLink>
+                <li>
                 </li>
                 <li>
-                    <Link to="/contact">Contact</Link> 
-                </li>
-                <li>
-                    <Link to="/users">Our users</Link> 
+                    <NavLink to="/users">Our user</NavLink>
                 </li>
             </ul>
         </div>
