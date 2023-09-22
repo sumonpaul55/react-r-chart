@@ -3,18 +3,10 @@ import "./navbar.css"
 
 const Navbar = () => {
     return (
-        <div>
-            <ul className="flex gap-5">
-                <li>
-                    <NavLink to="/about">About</NavLink>
-                </li>
+        <div className="flex gap-5">
+                     <NavLink to="/about">About</NavLink>
                     <NavLink to="/contact">Contact</NavLink>
-                <li>
-                </li>
-                <li>
                     <NavLink to="/users">Our user</NavLink>
-                </li>
-            </ul>
         </div>
     );
 };

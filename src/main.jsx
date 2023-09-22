@@ -8,10 +8,10 @@ import {
 import App from './App';
 import Home from './component/home/Home';
 import About from './component/about/About';
-import Contact from './component/contact/contact';
 import Users from './component/users/Users';
 import UserDetail from './component/user details/UserDetail';
 import NotFound from './component/user details/NotFound';
+import Contact from './component/contact/Contact';
 // import Header from './component/header/Header';
 const router = createBrowserRouter([
   {
