@@ -14,8 +14,18 @@ const handleEmail = (data)=>{
     {/* <Refform></Refform> */}
     {/* <FormInputState></FormInputState> */}
       <div className="p-3">
-      <Reusable formTitle="Sign Up" handleSubmit={handleSubmit}></Reusable>
-      <Reusable formTitle="Login" handleSubmit={handleEmail}></Reusable>
+      <Reusable formTitle="Sign Up" handleSubmit={handleSubmit}>
+       <div>
+       <h2 className="text-2xl">Sign Up</h2>
+        <p>Please sign up for go forword</p>
+       </div>
+      </Reusable>
+      <Reusable formTitle="Login" handleSubmit={handleEmail}>
+        <div>
+          <h2 className="text-2xl">Login</h2>
+          <p>Please Login for go</p>
+        </div>
+      </Reusable>
       <Reusable formTitle="Log out" submitBtnText="Update"></Reusable>
       </div>
     </div>

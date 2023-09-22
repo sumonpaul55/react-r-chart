@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 
-function Reusable({formTitle, submitBtnText = "submit" , handleSubmit}) {
+function Reusable({ submitBtnText = "submit" , handleSubmit, children}) {
     const handleLocalSubmit = (e)=>{
         e.preventDefault();
         const formData = {
@@ -14,7 +14,8 @@ function Reusable({formTitle, submitBtnText = "submit" , handleSubmit}) {
     return (
     <div className="mt-10">
         <h2 className="text-xl">
-        {formTitle}
+        {/* {formTitle} */}
+        {children}
         </h2>
         <form onSubmit={handleLocalSubmit}>
             <input className="m-3 text-black" type="text" name="name" />
@@ -30,7 +31,8 @@ function Reusable({formTitle, submitBtnText = "submit" , handleSubmit}) {
 Reusable.propTypes ={
     formTitle:PropTypes.string,
     submitBtnText: PropTypes.string,
-    handleSubmit: PropTypes.func
+    handleSubmit: PropTypes.func,
+    children: PropTypes.element
 }
 
 export default Reusable
