@@ -6,7 +6,7 @@ function FormInputState() {
     }
     // const inputValue = useInputState("sumonpual");
     const inputState = useInputState("sumonpual");
-    console.log(inputState)
+    // console.log(inputState)
     // const {value, onChange} = inputValue;
     // console.log(inputState)
   return (
